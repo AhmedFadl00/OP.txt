@@ -1,0 +1,660 @@
+Q1: Write a C++ program that defines a class Person with an integer array data member arr.The class should have two member functions:
+pass: takes an integer argument n and prompts the user to enter n elements of the array, which should be stored in the arr data member.
+print: takes an integer argument n and prints the values of the first n elements of the arr data member on the console.
+#include <iostream>
+using namespace std;
+class Person {
+private:
+ int arr[100];
+
+public:
+ void pass(int n) {
+  cout << "Enter " << n << " elements of the array:\n";
+  for (int i = 0; i < n; i++) {
+   cin >> arr[i];
+  }
+ }
+
+ void print(int n) {
+  cout << "The first " << n << " elements of the array are:\n";
+  for (int i = 0; i < n; i++) {
+   cout << arr[i] << " ";
+  }
+ cout << "\n";
+ }
+};
+
+int main() {
+ Person p;
+ p.pass(10);
+ p.print(10);
+ return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Q2: Write a C++ program that defines a class Person with a default constructor that simply prints
+"hello person" on the console. Create an object of this class in the main function.
+#include<iostream>
+using namespace std;
+class person
+{ public:
+//int x;
+person ()
+{
+
+cout<<"hello person "<<endl;
+}
+
+};
+int main()
+{ person p1;
+return 0;
+
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Q3: Write a C++ program that defines a class Circle with a public double attribute radius and a constructor that takes a double argument x and initializes the radius attribute with that value. 
+#include<iostream>
+using namespace std;
+class cir
+{ public:
+double redius;
+cir(double x)
+{
+	redius = x;
+
+} };
+int main()
+{
+	cir c1 (2.5);
+		int x;
+	cout<<"the redius"<<endl<<c1.redius;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Q4: Write a program to input data for 1 employee (name , address , id) using structure and print them on screen
+#include <iostream>
+using namespace std ;
+struct employee
+{
+char name [100] ;
+char address [200];
+int id;
+}
+empl ;
+int main ()
+{
+cout<<"enter name of empl"<<endl;
+cin>>empl.name;
+cout<<"enter address of empl"<<endl;
+cin>>empl.address;
+cout<<"enter id of empl"<<endl;
+cin>>empl.id;
+cout<<"print data of empl"<<endl;
+cout<<"employeel name "<<empl.name<<endl;
+cout<<"employeel address "<<empl.address<<endl;
+cout<<"employeel id "<<empl.id<<endl;
+return 0 ;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Q5: Write a C++ program that uses a structure to store the details of employees, including their name, address, and ID. 
+The program should prompt the user to enter the details of three employees and then print out the details of all three employees on the console.
+
+#include<iostream>
+using namespace std;
+struct empl
+{
+  char name[20];
+  char adress[20];
+  int id;
+}e[3];
+
+int main()
+{
+  for(int i = 0; i < 3 ; i++)
+  {
+  cout<<"enter data of "<<i+1<<"employee"<<endl;
+  cout<<"plz enter ur name"<<endl;
+  cin>>e[i].name;
+  cout<<"plz enter ur adress"<<endl;
+  cin>>e[i].adress;
+  cout<<"plz enter ur id"<<endl;
+  cin>>e[i].id;
+  }
+
+  for(int i = 0; i < 3 ; i++)
+  {
+  cout <<"data of "<<i+1<<"employee"<<endl;
+  cout<<"ur name"<<e[i].name<<endl;
+  cout<<"ur adress"<<e[i].adress<<endl;
+  cout<<"ur id"<<e[i].id<<endl;
+  }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Q6: Write a C++ program that defines a class "Car" with string attributes "brand" and "model", and an integer attribute "year". The program should create two objects of the "Car" class and assign values to their attributes. Finally, it should print the data of each object on the console.
+#include <iostream>
+#include <string>
+using namespace std;
+class Car
+{
+public :
+string brand ;
+string model;
+int year ;
+} ;
+int main ()
+{
+    Car car1,car2;
+car1.brand="BMW";
+car1.model="X5";
+car1.year=1999;
+car2.brand="FORD";
+car2.model="MUSTTANGE";
+car2.year=1969;
+  cout<<"print data of each object"<<endl;
+  cout<<car1.brand<<"\t"<<car1.model<<"\t"<<car1.year<<endl;
+  cout<<car2.brand<<"\t"<<car2.model<<"\t"<<car2.year<<endl;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Q7: Define a C++ class Room with three public attributes length, width, and height, and two public member functions, area() and volume(),that return the area and volume of the room, respectively. Write a program that creates an object of this class, takes user input for the dimensions of the room, and outputs the calculated area and volume of the room.
+#include <iostream>
+using namespace std;
+class Room
+{
+public :
+float length, width , hieght;
+float area () {return length * width ;}
+float volume ();};
+float Room :: volume ()
+{return length * width * hieght ;}
+int main ()
+{
+    Room room1;
+    cout<<"enter length room"<<endl;
+    cin>>room1.length;
+    cout<<"enter width room"<<endl;
+    cin>>room1.width;
+    cout<<"enter hieght room"<<endl;
+    cin>>room1.hieght;
+    cout<<"area of room = "<<room1.area()<<endl;
+    cout<<"volume of room = "<<room1.volume()<<endl;
+    return 0 ;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+pointer 1
+Q8: How can you declare a pointer variable and assign it to the memory address of an integer variable in C++? Then, how can you print the value of the integer variable, the memory address stored in the pointer variable, and the value stored at the memory address pointed by the pointer variable? 
+#include<iostream>
+using namespace std;
+int main()
+{
+	int var = 20;
+	int* ip;
+	ip = &var;
+	cout << "value of var variable=" << var << endl;
+	cout << "address stored in ip variable is " << ip << endl;
+	cout << "the value of *ip variable in pointer = " << *ip << endl;
+	return 0;
+}
+ ------------------------------------------------------------------------------------------------------------------------------------------
+pointer 2
+Q9: How can you use a pointer to print the values and addresses of elements in an integer array in C++? Write a program that initializes an integer array with three elements, declares a pointer variable, assigns it to the address of the first element in the array, and then prints the value, memory address, and memory value of each element using the pointer.
+#include<iostream>
+using namespace std;
+int main()
+{
+	int var[3] = { 10,100,200 };
+	int* ptr;
+	ptr = var;
+	for (int i = 0; i < 3; i++)
+	{
+		cout << "value of var[" << i << "]=" << var[1] << endl;
+		cout << "adress of var [" << i << "]=" << ptr << endl;
+		cout << "value of var [" << i << "]=" << *ptr << endl;
+			ptr++;
+	}
+	return 0;
+}
+
+
+----------------------------------------------------------------------------------------------------------
+ Static Fields
+
+tatic field belongs to the class rather than an object created from
+that class. Static fields serve as global variables that are always in
+memory (in the data section) while the program is running and can
+be accessed from anywhere in the code at anytime. For example:
+------------------------------------------------------------------------------------------------------------------------------------------
+Q10: Write a C++ program that defines a class Box with private attributes length, breadth, and height, and a public attribute object Count that is initialized to zero. The class should have a constructor  that takes three double arguments l, b, and h and initializes the length, breadth, and height attributes to these values. The class should also have a member function Volume that returns the volume of the box.
+#include <iostream>
+using namespace std;
+class Box {
+   public:
+      static int objectCount;
+      
+      // Constructor definition
+      Box(double l = 2.0, double b = 2.0, double h = 2.0) {
+         cout <<"Constructor called." << endl;
+         length = l;
+         breadth = b;
+         height = h;
+         
+         // Increase every time object is created
+         objectCount++;
+      }
+      double Volume() {
+         return length * breadth * height;
+      }
+      
+   private:
+      double length;     // Length of a box
+      double breadth;    // Breadth of a box
+      double height;     // Height of a box
+};
+
+// Initialize static member of class Box
+int Box::objectCount = 0;
+
+int main(void) {
+   Box Box1(3.3, 1.2, 1.5);    // Declare box1
+   Box Box2(8.5, 6.0, 2.0);    // Declare box2
+
+   // Print total number of objects.
+   cout << "Total objects: " << Box::objectCount << endl;
+
+   return 0;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Q11: Write a program that defines a class "A" with three static members (year, price, and model) and two methods (a constructor with three arguments to initialize the members, and a static "print" method to print the values of the static members). Then, call the static "print" method before and after creating an object of the class to see the values of the members.
+#include <iostream>
+using namespace std;
+class A {
+public:
+    static int year;
+    static  int price;
+    static  string model;
+    A(int a, int b, string c)
+    {
+        year = a;
+        price = b;
+        model = c;
+    }
+    A()
+    {
+        year = 2000;
+        price = 100;
+        model = "golf";
+    }
+    static void print() {
+
+        cout << "A::staic method  is called\n";
+        cout << "yaer is: " << year << "\t" << "price is :"  << price << "\t" << " model is:" << model << endl;
+    }
+
+};
+int  A::year = 2000;
+int   A::price = 100;
+string  A::model = "golf";
+
+int main() {
+
+    A::print();
+    A a(2022, 500000, "BMW");
+
+    a.print();
+    A::print();
+}
+---------------------------------------------------------------------------------------------------------
+Q12: Write a program that defines a Box class with length, breadth, and height as private data members 
+and object Count as a static data member. The class also contains a constructor, a function to calculate 
+the volume of the box, and a static member function to return the number of Box objects created. Use 
+this class to create two Box objects and print the number of Box objects created at the beginning and 
+end of the program.(Qنفس فكرة 10)
+
+#include <iostream> 
+using namespace std;
+class Box {
+ public:
+ static int objectCount;
+ 
+ // Constructor definition
+ Box(double l = 2.0, double b = 2.0, double h = 2.0) {
+ cout <<"Constructor called." << endl;
+ length = l;
+ breadth = b;
+ height = h;
+ // Increase every time object is created
+ objectCount++;
+ }
+ double Volume() {
+ return length * breadth * height;
+ }
+ static int getCount() {
+ return objectCount;
+ }
+ 
+ private:
+ double length; // Length of a box
+ double breadth; // Breadth of a box
+ double height; // Height of a box
+};
+// Initialize static member of class Box
+int Box::objectCount = 0;
+int main(void) {
+ // Print total number of objects before creating object.
+ cout << "Inital Stage Count: " << Box::getCount() << endl;
+ Box Box1(3.3, 1.2, 1.5); // Declare box1
+ Box Box2(8.5, 6.0, 2.0); // Declare box2
+ // Print total number of objects after creating object.
+ cout << "Final Stage Count: " << Box::getCount() << endl;
+ return 0;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Q13: How can you create a class with two data members, a parameterized constructor to initialize the data members, and a default constructor to set the data members to default values? Then, how can you create objects of this class using both constructors and print the values of data members for each object using a member function of the class?
+#include<iostream>
+using namespace std;
+  
+class Test
+{
+public:
+  int x;
+  int y;
+public:
+  Test(int x , int y ) { this->x = x; this->y = y; }
+ Test( ) 
+ { this->x = 26; this->y = 20; }
+
+ // void destroy()  { delete this; }
+  void print() { cout << "x = " << x << " y = " << y << endl; }
+};
+  
+int main()
+{
+  Test obj;
+ // obj.destroy();
+  obj.print();
+  Test o (11 ,10);
+  o.print();
+  return 0;
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Q14: Write a program that defines a class named Test with a public integer array x of size 30. The class should have a public member function named input that takes the size of the array as input and initializes each element of the array by taking input from the user. The class should also have a public member function named print that prints the elements of the array.
+
+#include<iostream>
+using namespace std;
+class Test
+{
+public:
+  int x[30];
+  
+public:
+  void input(int z)
+{
+for (int i =0;i<z;i++)
+{
+cout<<"enter element of array"<<endl;
+cin>>x[i];
+}
+}
+
+  void print() 
+  { for (int i =0;i<sizeof(x);i++)
+     cout << x[i]<< endl; }
+};
+  
+int main()
+{
+  Test obj;
+  int y;
+  cout<<"enter size of array"<<endl;
+  cin>>y;
+obj.input(y);
+  obj.print();
+  
+  return 0;
+}
+--------------------------------------
+
+(another code for Q14)
+
+#include <iostream>
+using namespace std;
+
+class Test {
+public:
+    int x[30];
+
+public:
+    void input(int z) {
+        for (int i = 0; i < z; i++) {
+            cout << "Enter element " << i << " of array: ";
+            cin >> x[i];
+        }
+    }
+
+    void print() {
+        for (int i = 0; i < 30; i++) {
+            cout << x[i] << " ";
+        }
+        cout << endl;
+    }
+};
+
+int main() {
+    Test obj;
+    int size;
+    cout << "Enter size of array (<=30): ";
+    cin >> size;
+    obj.input(size);
+    cout << "Elements of array: ";
+    obj.print();
+    return 0;
+}
+--------------------------------------
+(another code for Q14)
+
+#include<iostream>
+using namespace std;
+class Test
+{
+private:
+ int x[30];
+ int z;
+public:
+ void input()
+{
+  cout<<"entre the size of array"<<endl;
+  cin>>z;
+  cout<<"enter element of array"<<endl;
+for (int i =0;i<z;i++)
+{
+cin>>x[i];
+}
+}
+ void print() 
+ { 
+  cout<<"the elements : "<<endl;
+  for (int i =0;i<z;i++)
+ cout <<x[i]<< endl; }
+};
+ 
+int main()
+{
+ Test obj;
+obj.input();
+obj.print();
+ return 0;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Q15: Write a program that declares a class named "Employee" with a private attribute named "salary", and includes a setter method named "setSalary()" and a getter method named "getSalary()" to modify and access the value of the "salary" attribute.
+#include <iostream> 
+using namespace std;
+class Employee {
+  private:
+    // Private attribute
+    int salary;
+
+  public:
+    // Setter
+    void setSalary(int s) {
+      salary = s;
+    }
+    // Getter
+    int getSalary() {
+      return salary;
+    }
+};
+
+int main() {
+  Employee myObj;
+  myObj.setSalary(50000);
+  cout << myObj.getSalary();
+  return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Q16: Write a program that denes a class named Product with three elds: id, name, and price. The class should also have a method named Print that prints product data when called. Afterward, dene three objects of that class and assign values to their elds. Finally, print a product list by calling the Print method of each of the three objects.
+
+#include <iostream>
+#include <string>
+using namespace std;
+class Product {
+public:
+    int id;
+    string name;
+    double price;
+
+    void Print() {
+        cout << "Product ID: " << id << endl;
+        cout << "Product Name: " << name << endl;
+        cout << "Product Price: $" << price << endl;
+        cout << endl;
+    }
+};
+
+int main() {
+    // Create three objects of Product class
+    Product product1 {1, "Product 1", 9.99};
+    Product product2 {2, "Product 2", 19.99};
+    Product product3 {3, "Product 3", 29.99};
+
+    // Print product list by calling Print method of each object
+    product1.Print();
+    product2.Print();
+    product3.Print();
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Q17: Write a program that contains a class named Circle. The class should contain one eld of type double named radius and one constructor that takes a single parameter of type double. The constructor should assign the passed argument to the radius eld. Afterward, create an object of type Circle and print the value of its radius on the screen.(Qنفس فكرة 3)
+
+#include <iostream>
+using namespace std;
+class Circle {
+public:
+    double radius;
+
+    Circle(double r) {
+        radius = r;
+    }
+};
+
+int main() {
+    // Create an object of type Circle with radius 5.0
+    Circle myCircle(5.0);
+
+    // Print the value of the circle's radius
+    cout << "The circle's radius is " << myCircle.radius << endl;
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Q18: Write a program that contains a class named Circle. The class should contain one private eld of type double named radius and two public methods. One method is a setter for the radius eld while the other is a getter. Afterward, create an object of type Circle, set its radius using the settermethod. Then get the value of its radius using the getter method and print.it on the screen.
+#include <iostream>
+using namespace std;
+class Circle {
+private:
+    double radius;
+
+public:
+    // Setter method for radius field
+    void setRadius(double r) {
+        radius = r;
+    }
+
+    // Getter method for radius field
+    double getRadius() {
+        return radius;
+    }
+};
+
+int main() {
+    // Create an object of type Circle
+    Circle myCircle;
+
+    // Set the radius of the circle to 5.0 using the setter method
+    myCircle.setRadius(5.0);
+
+    // Get the value of the circle's radius using the getter method and print it on the screen
+    cout << "The circle's radius is " << myCircle.getRadius() << endl;
+
+    return 0;
+}
+-------------------------------------------------------------------------------------------
+
+Q19: write program to swap to variable using dynamic allocation ( call by referance)
+
+#include <iostream>
+using namespace std;
+
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int* x, * y;
+    x = new int;
+    y = new int;
+    *x = 10;
+    *y = 20;
+    cout << "Before swap: x = " << *x << ", y = " << *y << endl;
+    swap(x, y);
+    cout << "After swap: x = " << *x << ", y = " << *y << endl;
+    delete x;
+    delete y;
+    return 0;
+}
+
+                    -------------------------------------
+
+(Another code for Q19) [ let the user enter the values of swap]
+
+#include <iostream>
+using namespace std;
+
+void swap(int*& p1, int*& p2) {
+    int* temp = p1;
+    p1 = p2;
+    p2 = temp;
+}
+
+int main() {
+    int* x = new int;
+    int* y = new int;
+    cout << "Enter the value of x: ";
+    cin >> *x;
+    cout << "Enter the value of y: ";
+    cin >> *y;
+    cout << "Before swap: x = " << *x << ", y = " << *y << endl;
+    swap(x, y);
+    cout << "After swap: x = " << *x << ", y = " << *y << endl;
+    
+    return 0;
+}
