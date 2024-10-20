@@ -1,0 +1,117 @@
+/* إعدادات عامة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* لون خلفية الصفحة */
+}
+
+/* الرأس */
+header {
+    background: #35424a; /* لون خلفية الرأس */
+    color: #ffffff; /* لون النص */
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* التنقل */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #e8491d; /* لون خلفية الشريط التنقلي */
+}
+
+nav a {
+    color: #ffffff; /* لون النص */
+    padding: 14px 20px;
+    text-decoration: none; /* إزالة التسطير */
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #f4f4f4; /* لون الخلفية عند التمرير */
+    color: #35424a; /* لون النص عند التمرير */
+}
+
+/* حاوية المحتوى */
+.container {
+    width: 80%;
+    margin: 20px auto; /* مركز الصفحة */
+    background: #ffffff; /* لون خلفية المحتوى */
+    padding: 20px;
+    border-radius: 8px; /* زوايا مدورة */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+/* تنسيق العنوان */
+h2 {
+    color: #35424a; /* لون عنوان القسم */
+}
+
+/* تنسيق النموذج */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block; /* جعل التسمية تظهر في سطر جديد */
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%; /* عرض كامل */
+    padding: 10px; /* حشوة */
+    border: 1px solid #ccc; /* لون الحدود */
+    border-radius: 4px; /* زوايا مدورة */
+    box-sizing: border-box; /* احتساب الحشوة والحدود */
+}
+
+button {
+    background-color: #e8491d; /* لون زر */
+    color: white; /* لون النص في الزر */
+    padding: 10px 15px; /* حشوة الزر */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* زوايا مدورة */
+    cursor: pointer; /* تغيير شكل المؤشر عند التمرير */
+}
+
+button:hover {
+    background-color: #35424a; /* لون الزر عند التمرير */
+}
+
+/* تنسيق المنتجات */
+.products {
+    display: flex; /* استخدام flexbox لصف المنتجات */
+    flex-wrap: wrap; /* يسمح بالالتفاف */
+    justify-content: space-between; /* توزيع المساحة */
+}
+
+.product {
+    border: 1px solid #ccc; /* لون الحدود للمنتجات */
+    border-radius: 8px; /* زوايا مدورة */
+    margin: 10px; /* هامش حول المنتجات */
+    padding: 15px; /* حشوة داخل المنتج */
+    width: calc(30% - 20px); /* عرض المنتجات مع هامش */
+    background: #fff; /* لون خلفية المنتج */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    transition: transform 0.3s; /* تأثير التحول */
+}
+
+.product:hover {
+    transform: scale(1.05); /* تكبير المنتج عند التمرير */
+}
+
+.product img {
+    max-width: 100%; /* صورة المنتج تأخذ عرض كامل */
+    height: auto; /* الحفاظ على نسبة الطول */
+}
+
+/* الفوتر */
+footer {
+    background: #35424a; /* لون خلفية الفوتر */
+    color: #ffffff; /* لون النص */
+    text-align: center;
+    padding: 10px 0;
+}

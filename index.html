@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shoping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- إضافة Font Awesome -->
+
+</head>
+<body>
+
+    <!-- الرأس -->
+    <header>
+        <h1>Online Shoping 007 </h1>
+    </header>
+
+    <!-- التنقل -->
+    <nav>
+        <a href="#">الصفحة الرئيسية</a>
+        <a href="#">المنتجات</a>
+        <a href="#">السلة</a>
+        <a href="#">تواصل معنا</a>
+    </nav>
+
+    <!-- محتوى الصفحة الرئيسية -->
+    <div class="container">
+        <h2><i class="fas fa-user"></i> بيانات العميل</h2>
+        <form id="customerForm">
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">رقم الهاتف:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <button type="submit"><i class="fas fa-paper-plane"></i> إرسال البيانات</button>
+        </form>
+    </div>
+
+    <!-- المحتوى الرئيسي للمنتجات -->
+    <div class="container">
+        <h2><i class="fas fa-box"></i> المنتجات المميزة</h2>
+
+        <div class="products">
+            <!-- منتج 1 -->
+            <div class="product">
+                <img src="images/product1.jpg" alt="منتج 1">
+                <h3>منتج 1</h3>
+                <p>وصف مختصر للمنتج 1.</p>
+                <p>السعر: $10.00</p>
+                <button onclick="addToCart('منتج 1', 10.00)"><i class="fas fa-cart-plus"></i> أضف إلى السلة</button>
+            </div>
+
+            <!-- منتج 2 -->
+            <div class="product">
+                <img src="images/product2.jpg" alt="منتج 2">
+                <h3>منتج 2</h3>
+                <p>وصف مختصر للمنتج 2.</p>
+                <p>السعر: $15.00</p>
+                <button onclick="addToCart('منتج 2', 15.00)"><i class="fas fa-cart-plus"></i> أضف إلى السلة</button>
+            </div>
+
+            <!-- منتج 3 -->
+            <div class="product">
+                <img src="images/product3.jpg" alt="منتج 3">
+                <h3>منتج 3</h3>
+                <p>وصف مختصر للمنتج 3.</p>
+                <p>السعر: $20.00</p>
+                <button onclick="addToCart('منتج 3', 20.00)"><i class="fas fa-cart-plus"></i> أضف إلى السلة</button>
+            </div>
+
+            <!-- منتج 4 -->
+            <div class="product">
+                <img src="images/product4.jpg" alt="منتج 4">
+                <h3>منتج 4</h3>
+                <p>وصف مختصر للمنتج 4.</p>
+                <p>السعر: $25.00</p>
+                <button onclick="addToCart('منتج 4', 25.00)"><i class="fas fa-cart-plus"></i> أضف إلى السلة</button>
+            </div>
+
+            <!-- منتج 5 -->
+            <div class="product">
+                <img src="images/product5.jpg" alt="منتج 5">
+                <h3>منتج 5</h3>
+                <p>وصف مختصر للمنتج 5.</p>
+                <p>السعر: $30.00</p>
+                <button onclick="addToCart('منتج 5', 30.00)"><i class="fas fa-cart-plus"></i> أضف إلى السلة</button>
+            </div>
+
+            <!-- منتج 6 -->
+            <div class="product">
+                <img src="images/product6.jpg" alt="منتج 6">
+                <h3>منتج 6</h3>
+                <p>وصف مختصر للمنتج 6.</p>
+                <p>السعر: $35.00</p>
+                <button onclick="addToCart('منتج 6', 35.00)"><i class="fas fa-cart-plus"></i> أضف إلى السلة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- عرض السلة -->
+    <div class="container">
+        <h2>سلة التسوق</h2>
+        <div id="cart">
+            <p>السلة فارغة</p>
+        </div>
+        <button id="checkoutBtn" onclick="checkout()"><i class="fas fa-credit-card"></i> إتمام الشراء</button>
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>&copy; "2024" جميع الحقوق محفوظة.  بواسطة 007
+
+    <!-- الربط مع JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
